@@ -1,5 +1,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
+
 #include <dt-bindings/zmk/mouse.h>
 
 #include "../zmk-nodefree-config/helper.h"
@@ -124,11 +127,11 @@ XXX       &kp LC(Z)    &kp LC(X)    &kp LC(C)      &kp LC(V)     &kp LC(Y)      
 
 ZMK_LAYER(media_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-XXX       XXX           &kp C_BRI_DN &kp C_VOL_UP  &kp C_BRI_UP  XXX              XXX           XXX           XXX           XXX           XXX           XXX
+XXX       XXX           &kp C_BRI_DN &kp C_VOL_UP  &kp C_BRI_UP  &bootloader       &bootloader    XXX           XXX           XXX           XXX           XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       XXX          &kp C_PREV   &kp C_VOL_DN   &kp C_NEXT   XXX                XXX           &kp RSHFT     &kp LCTRL     &kp LALT      &kp LGUI     XXX
+XXX       XXX          &kp C_PREV   &kp C_VOL_DN   &kp C_NEXT   &sys_reset        &sys_reset     &kp RSHFT     &kp LCTRL     &kp LALT      &kp LGUI     XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       XXX          XXX          XXX            XXX           XXX               XXX           XXX           XXX          XXX           XXX           XXX
+          XXX        _BT_SEL_KEYS_                                                XXX           XXX           XXX          XXX           XXX           XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                      &kp C_MUTE   &kp C_PP      &kp C_STOP         XXX           XXX           XXX
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
