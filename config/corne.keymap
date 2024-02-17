@@ -87,6 +87,72 @@ ZMK_BEHAVIOR(hmr, hold_tap,
              hold-trigger-key-positions = <KEYS_L THUMBS>;
              hold-trigger-on-release;             // delay positional check until key-release
              )
+// macros
+
+ZMK_BEHAVIOR(CRAN, macro,
+             wait-ms = <0>;
+             tap-ms = <1>;
+             bindings = <&macro_press &kp LSHFT>
+             , <&macro_tap &kp C &kp R &kp A &kp N>
+             , <&macro_release &kp LSHFT>
+             ;
+             )
+
+ZMK_BEHAVIOR(TRUE, macro,
+             wait-ms = <0>;
+             tap-ms = <1>;
+             bindings = <&macro_press &kp LSHFT>
+             , <&macro_tap &kp T &kp R &kp U &kp E>
+             , <&macro_release &kp LSHFT>
+             ;
+             )
+
+ZMK_BEHAVIOR(FALSE, macro,
+             wait-ms = <0>;
+             tap-ms = <1>;
+             bindings = <&macro_press &kp LSHFT>
+             , <&macro_tap &kp F &kp A &kp L &kp S &kp E>
+             , <&macro_release &kp LSHFT>
+             ;
+             )
+
+ZMK_BEHAVIOR(LARROW, macro,
+             wait-ms = <0>;
+             tap-ms = <1>;
+             bindings = <&macro_press &kp LSHFT>
+             , <&macro_tap &kp COMMA>
+             , <&macro_release &kp LSHFT>
+             , <&macro_tap &kp MINUS>
+             ;
+             )
+
+ZMK_BEHAVIOR(RARROW, macro,
+             wait-ms = <0>;
+             tap-ms = <1>;
+             bindings = <&macro_tap &kp MINUS>,
+             <&macro_press &kp LSHFT>
+             , <&macro_tap &kp DOT>
+             , <&macro_release &kp LSHFT>
+             ;
+             )
+
+ZMK_BEHAVIOR(PIPE, macro,
+             wait-ms = <0>;
+             tap-ms = <1>;
+             bindings = <&macro_press &kp LSHFT>
+             , <&macro_tap &kp N5 &kp DOT &kp N5>
+             , <&macro_release &kp LSHFT>
+             ;
+             )
+
+ZMK_BEHAVIOR(KNULL, macro,
+             wait-ms = <0>;
+             tap-ms = <1>;
+             bindings = <&macro_press &kp LSHFT>
+             , <&macro_tap &kp N &kp U &kp L &kp L>
+             , <&macro_release &kp LSHFT>
+             ;
+             )
 
 /* keymap */
 
@@ -96,7 +162,7 @@ XXX       &kp Q         &kp W         &kp F         &kp P         &kp G         
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 XXX       &hmr LGUI A   &hmr LALT R   &hmr LCTRL S &hmr LSHFT T  &kp D             &kp H         &hml RSHFT N  &hml LCTRL E &hml LALT I   &hml LGUI O    XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       &kp Z         &kp X        &kp C         &kp V         &kp B             &kp K         &kp M         &kp COMMA    &kp DOT       &kp SLASH      XXX
+XXX       &kp Z         &kp X        &lt RGT C     &kp V         &kp B             &kp K         &kp M         &lt LFT COMMA    &kp DOT       &kp SLASH      XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                      &lt FUN DEL   &lt NUM BSPC  &lt SYM RET       &lt MOU TAB   &lt MVE SPACE &lt MED ESC
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -174,27 +240,27 @@ XXX       XXX          XXX           XXX           XXX           XXX            
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-// ZMK_LAYER(left_layer,
-//      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-//           &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y         &kp SQT
-//      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//           &hrm LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T  &kp D             &kp H         &hml RSHFT N  &hrm LCTRL E  &hrm LALT I   &hrm LGUI O
-//      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//           &kp Z         &kp V        &kp C         &kp D         &kp B             &kp K         &kp M         &kp COMMA     &kp DOT       &kp SLASH
-//      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//                                      &lt DEL      &kp BSPC       &kp RET           &kp TAB       &kp SPACE      &kp ESC
-//      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-// )
+ZMK_LAYER(left_layer,
+     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+XXX     LC(N1)         LC(N2)        LC(N3)        LC(N4)        LC(N5)               XXX           XXX           XXX          XXX         XXX           XXX
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+XXX     LA(N1)         LA(N2)        LA(N3)        LA(N4)        LA(N5)               XXX          LSHFT          LSHFT          LSHFT       LSHFT        XXX
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+XXX      XXX          XXX           CRAN          XXX           XXX                   XXX         XXX          XXX           XXX          XXX            XXX
+     // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                                     XXX          TRUE           FALSE             XXX           XXX           XXX
+     //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+)
 
 
-// ZMK_LAYER(right_layer,
-//      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-//           &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y         &kp SQT
-//      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//           &hrm LGUI A   &hml LALT R   &hml LCTRL S  &hml LSHFT T  &kp D             &kp H         &hml RSHFT N  &hrm LCTRL E  &hrm LALT I   &hrm LGUI O
-//      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//           &kp Z         &kp V        &kp C         &kp D         &kp B             &kp K         &kp M         &kp COMMA     &kp DOT       &kp SLASH
-//      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-//                                      &lt DEL      &kp BSPC       &kp RET           &kp TAB       &kp SPACE      &kp ESC
-//      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-// )
+ZMK_LAYER(right_layer,
+     // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+XXX      XXX          XXX            XXX          XXX           XXX              LC(N6)         LC(N7)         LC(N8)        LC(N9)        LC(N0)            XXX
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+XXX      XXX          XXX            XXX          XXX           XXX              LA(N6)         LA(N7)         LA(N8)        LA(N9)        LA(N0)            XXX
+     // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+XXX     XXX           XXX           XXX           XXX            XXX               KNULL         XXX           XXX           PIPE         XXX             XXX
+     // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+                                     XXX           XXX           XXX               LARROW         RARROW       XXX
+     //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+)
