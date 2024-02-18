@@ -7,4 +7,4 @@ since that is where the board was from.
 
 However, I also found some excellent zmk configuration options in the
 configuration from [urob](https://github.com/urob/zmk-config) was
-quite helpful for home row modifications.
+quite helpful for home row modifications.  I use the nodefree config from [urob](https://github.com/urob/zmk-nodefree-config/) too (as a sub-module).

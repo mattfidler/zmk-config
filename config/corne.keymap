@@ -88,6 +88,16 @@ ZMK_BEHAVIOR(hmr, hold_tap,
              hold-trigger-on-release;             // delay positional check until key-release
              )
 
+// macros
+
+ZMK_BEHAVIOR(cran, macro,
+             wait-ms = <0>;
+             tap-ms = <1>;
+             bindings = <&macro_press &kp LSHFT>
+                      , <&macro_tap &kp C &kp R &kp A &kp N>
+                      , <&macro_release &kp LSHFT>
+             ;)
+
 /* keymap */
 
 ZMK_LAYER(default_layer,
@@ -180,7 +190,7 @@ XXX      &kp LC(N1)     &kp LC(N2)    &kp LC(N3)    &kp LC(N4)    &kp LC(N5)    
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 XXX      &kp LA(N1)    &kp LA(N2)    &kp LA(N3)    &kp LA(N4)     &kp LA(N5)        XXX            &kp RSHFT     &kp LSHFT     &kp LSHFT     &kp LSHFT    XXX
       // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       XXX          XXX           XXX           XXX            XXX              XXX           XXX          XXX           XXX            XXX             XXX
+XXX       XXX          XXX           &cran          XXX            XXX              XXX           XXX          XXX           XXX            XXX             XXX
       // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                                           XXX           XXX           XXX                  XXX           XXX           XXX
        //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
