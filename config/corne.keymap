@@ -67,7 +67,15 @@
 
 
 /* left-hand HRMs */
-ZMK_BEHAVIOR(hml, hold_tap,
+ZMK_BEHAVIOR(hmls, hold_tap,
+             flavor = "hold-preferred";
+             tapping-term-ms = <200>;
+             bindings = <&kp>, <&kp>;
+             hold-trigger-key-positions = <KEYS_R THUMBS>;
+             hold-trigger-on-release;             // delay positional check until key-release
+             )
+
+ZMK_BEHAVIOR(hmls, hold_tap,
              flavor = "balanced";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
@@ -83,6 +91,14 @@ ZMK_BEHAVIOR(hmr, hold_tap,
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
              require-prior-idle-ms = <130>;
+             bindings = <&kp>, <&kp>;
+             hold-trigger-key-positions = <KEYS_L THUMBS>;
+             hold-trigger-on-release;             // delay positional check until key-release
+             )
+
+ZMK_BEHAVIOR(hmrs, hold_tap,
+             flavor = "hold-preferred";
+             tapping-term-ms = <200>;
              bindings = <&kp>, <&kp>;
              hold-trigger-key-positions = <KEYS_L THUMBS>;
              hold-trigger-on-release;             // delay positional check until key-release
@@ -164,7 +180,7 @@ ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
 XXX       &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y         &kp SQT      XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       &hmr LGUI A   &hmr LALT R   &hmr LCTRL S &hmr LSHFT T  &kp D             &kp H         &hml RSHFT N  &hml LCTRL E &hml LALT I   &hml LGUI O    XXX
+XXX       &hmr LGUI A   &hmr LALT R   &hmr LCTRL S &hmrs LSHFT T  &kp D             &kp H         &hmls RSHFT N  &hml LCTRL E &hml LALT I   &hml LGUI O    XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 XXX       &kp Z         &kp X        &lt RGT C         &kp V         &kp B             &kp K         &kp M        &lt LFT COMMA  &kp DOT       &kp SLASH      XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
