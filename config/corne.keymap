@@ -76,10 +76,10 @@ ZMK_BEHAVIOR(hmls, hold_tap,
              )
 
 ZMK_BEHAVIOR(hml, hold_tap,
-             flavor = "balanced";
+             flavor = "hold-preferred";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
-             require-prior-idle-ms = <150>;
+             require-prior-idle-ms = <100>;
              bindings = <&kp>, <&kp>;
              hold-trigger-key-positions = <KEYS_R THUMBS>;
              hold-trigger-on-release;             // delay positional check until key-release
@@ -87,10 +87,10 @@ ZMK_BEHAVIOR(hml, hold_tap,
 
 /* right-hand HRMs */
 ZMK_BEHAVIOR(hmr, hold_tap,
-             flavor = "balanced";
+             flavor = "hold-preferred";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
-             require-prior-idle-ms = <150>;
+             require-prior-idle-ms = <100>;
              bindings = <&kp>, <&kp>;
              hold-trigger-key-positions = <KEYS_L THUMBS>;
              hold-trigger-on-release;             // delay positional check until key-release
@@ -174,6 +174,13 @@ ZMK_BEHAVIOR(klarrow, macro,
              <&macro_tap &kp MINUS>
              ;)
 
+// smart mouse
+// ZMK_BEHAVIOR(smart_mouse, tri_state,
+//              bindings = <&tog MOU>, <&none>, <&tog MOU>;
+//              ignored-key-positions = <LT0 LT5 LM0 LM5 LB5 LB4 LB3 LB2 LB1 LB0 RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM5 RB0 RB1 RB2 RB3>;
+//              ignored-layers = <MOUSE>;
+//              )
+
 /* keymap */
 
 ZMK_LAYER(default_layer,
@@ -189,13 +196,13 @@ XXX       &kp Z         &kp X        &lt RGT C         &kp V         &kp B      
 )
 ZMK_LAYER(mouse_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-XXX       U_WH_U       U_WH_L        U_MS_U       U_WH_R        XXX               XXX            XXX           XXX          XXX           XXX           XXX
+XXX       U_WH_U       U_WH_L        U_MS_U       U_WH_R        ___               ___           ___           ___           ___           ___           XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       U_WH_D       U_MS_L       U_MS_D        U_MS_R        XXX               XXX           &kp RSHFT     &kp LCTRL     &kp LALT      &kp LGUI      XXX
+XXX       U_WH_D       U_MS_L       U_MS_D        U_MS_R        ___               ___           &kp RSHFT     &kp LCTRL     &kp LALT      &kp LGUI      XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       &kp LC(Z)    &kp LC(X)    &kp LC(C)      &kp LC(V)     &kp LC(Y)         XXX           XXX           XXX          XXX           XXX            XXX
+XXX      ___           ___          ___           ___           ___                ___           ___          ___           ___           ___            XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                                     &mkp MCLK     &mkp RCLK     &mkp LCLK         XXX           XXX           XXX
+                                     &mkp MCLK     &mkp RCLK     &mkp LCLK         ___           ___           ____
      //                             ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
