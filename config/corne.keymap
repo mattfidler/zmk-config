@@ -75,7 +75,7 @@ ZMK_BEHAVIOR(hmls, hold_tap,
              hold-trigger-on-release;             // delay positional check until key-release
              )
 
-ZMK_BEHAVIOR(hmls, hold_tap,
+ZMK_BEHAVIOR(hml, hold_tap,
              flavor = "balanced";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
