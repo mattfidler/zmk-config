@@ -65,16 +65,10 @@
 // #define U_WH_L &none
 // #define U_WH_R &none
 
-&lt {  // layer-tap config
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-};
-
 
 /* left-hand HRMs */
 ZMK_BEHAVIOR(hml, hold_tap,
-             flavor = "balanced";
+             flavor = "hold-preferred";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
              require-prior-idle-ms = <150>;
@@ -85,7 +79,7 @@ ZMK_BEHAVIOR(hml, hold_tap,
 
 /* right-hand HRMs */
 ZMK_BEHAVIOR(hmr, hold_tap,
-             flavor = "balanced";
+             flavor = "hold-preferred";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
              require-prior-idle-ms = <150>;
