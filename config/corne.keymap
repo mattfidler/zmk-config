@@ -234,9 +234,9 @@ XXX       XXX          XXX           XXX           XXX           XXX            
 
 ZMK_LAYER(symbol_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-XXX       XXX          XXX           XXX           XXX           XXX                &kp LS(LBKT)  &kp LS(N7)   &kp LS(F8)    &kp LPAR    &kp LS(RBKT)  XXX
+XXX       XXX          XXX           XXX           XXX           XXX              &kp LS(LBKT)   &kp LS(N7)    &kp LS(N8)   &kp LPAR      &kp LS(RBKT)  XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       &kp LGUI     &kp LALT      &kp LCTL      &kp LSHFT      XXX            &kp PLUS &kp LS(N4)    &kp LS(N5)    &kp LS(N6)   &kp LS(SEMI) XXX
+XXX       &kp LGUI     &kp LALT      &kp LCTL      &kp LSHFT      XXX            &kp PLUS       &kp LS(N4)    &kp LS(N5)    &kp LS(N6)   &kp LS(SEMI)   XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 XXX       XXX          XXX           XXX           XXX           XXX               &kp LS(BSLH)  &kp LS(N1)    &kp LS(N2)    &kp LS(N3)   &kp LS(GRAVE) XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
