@@ -76,7 +76,7 @@ ZMK_BEHAVIOR(hmls, hold_tap,
              )
 
 ZMK_BEHAVIOR(hml, hold_tap,
-             flavor = "balanced";
+             flavor = "hold-preferred";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
              require-prior-idle-ms = <130>;
@@ -87,7 +87,7 @@ ZMK_BEHAVIOR(hml, hold_tap,
 
 /* right-hand HRMs */
 ZMK_BEHAVIOR(hmr, hold_tap,
-             flavor = "balanced";
+             flavor = "hold-preferred";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
              require-prior-idle-ms = <130>;
