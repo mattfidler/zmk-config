@@ -180,7 +180,7 @@ ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
 XXX       &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y         &kp SQT      XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-XXX       &hmr LGUI A   &hmr LALT R   &hmr LCTRL S &hmrs LSHFT T  &kp D             &kp H         &hmls RSHFT N  &hml LCTRL E &hml LALT I   &hmlqqq LGUI O    XXX
+XXX       &hmr LGUI A   &hmr LALT R   &hmr LCTRL S &hmrs LSHFT T  &kp D             &kp H         &hmls RSHFT N  &hml LCTRL E &hml LALT I   &hml LGUI O    XXX
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 XXX       &kp Z         &kp X        &lt RGT C         &kp V         &kp B             &kp K         &kp M        &lt LFT COMMA  &kp DOT       &kp SLASH      XXX
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
