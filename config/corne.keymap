@@ -199,7 +199,8 @@ ZMK_BEHAVIOR(smart_mouse, tri_state,
              ignored-layers = <MOU>;
              )
 
-ZMK_COMBO(mouse, &smart_mouse,  LT3 LT1,    ALL, COMBO_TERM_FAST)
+ZMK_COMBO(mouse, &smart_mouse,  LT3 LT1,    DEF MVE MED FUN NUM SYM LFT RGT, COMBO_TERM_FAST)
+ZMK_COMBO(mouseOff, &to MOU, LT3 LT1, MOU, COMBO_TERM_FAST)
 
 /* keymap */
 
@@ -207,7 +208,7 @@ ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
 ___       &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y         &kp SQT      ___
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-___       &hmrs LGUI A   &hmrs LALT R   &hmrs LCTRL S &hmrs LSHFT T  &kp D             &kp H         &hmls RSHFT N  &hmls LCTRL E &hmls LALT I   &hmls LGUI O    ___
+___       &hmrs LGUI A   &hmrs LALT R   &hmrs LCTRL S &hmrs LSHFT T  &kp D             &kp H         &hmls RSHFT N  &hmlsLCTRL E &hmls LALT I   &hmls LGUI O    ___
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 ___       &kp Z         &kp X        &lt RGT C         &kp V         &kp B             &kp K         &kp M        &lt LFT COMMA  &kp DOT       &kp SLASH      ___
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
