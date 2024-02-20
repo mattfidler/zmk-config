@@ -68,7 +68,7 @@
 
 /* left-hand HRMs */
 ZMK_BEHAVIOR(hmls, hold_tap,
-             flavor = "hold-preferred";
+             flavor = "balanced";
              tapping-term-ms = <200>;
              bindings = <&kp>, <&kp>;
              hold-trigger-key-positions = <KEYS_R THUMBS>;
@@ -76,7 +76,7 @@ ZMK_BEHAVIOR(hmls, hold_tap,
              )
 
 ZMK_BEHAVIOR(hml, hold_tap,
-             flavor = "hold-preferred";
+             flavor = "balanced";
              tapping-term-ms = <280>;
              quick-tap-ms = <175>;                // repeat on tap-into-hold
              require-prior-idle-ms = <100>;
@@ -207,7 +207,7 @@ ZMK_LAYER(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
 ___       &kp Q         &kp W         &kp F         &kp P         &kp G             &kp J         &kp L         &kp U         &kp Y         &kp SQT      ___
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-___       &hmr LGUI A   &hmr LALT R   &hmr LCTRL S &hmrs LSHFT T  &kp D             &kp H         &hmls RSHFT N  &hml LCTRL E &hml LALT I   &hml LGUI O    ___
+___       &hmrs LGUI A   &hmrs LALT R   &hmrs LCTRL S &hmrs LSHFT T  &kp D             &kp H         &hmls RSHFT N  &hmls LCTRL E &hmls LALT I   &hmls LGUI O    ___
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
 ___       &kp Z         &kp X        &lt RGT C         &kp V         &kp B             &kp K         &kp M        &lt LFT COMMA  &kp DOT       &kp SLASH      ___
      // ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
