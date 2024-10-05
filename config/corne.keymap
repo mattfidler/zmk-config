@@ -205,6 +205,8 @@ ZMK_BEHAVIOR(smart_mouse, tri_state,
 ZMK_COMBO(mouse, &smart_mouse,  LT3 LT1,    DEF MVE MED FUN NUM SYM LFT RGT, COMBO_TERM_FAST)
 ZMK_COMBO(mouseOff, &to MOU, LT3 LT1, MOU, COMBO_TERM_FAST)
 
+ZMK_COMBO(menuAltEqual, &kp LA(EQUAL), LB4 LB3, ALL, COMBO_TERM_FAST)
+
 /* keymap */
 
 ZMK_LAYER(default_layer,
